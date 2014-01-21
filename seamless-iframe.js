@@ -11,7 +11,7 @@
     /**
      * Add and remove domains to prevent untrusted windows from executing code.
      */
-    var allowed_domains = ['http://localhost:9000', '127.0.0.1'],
+    var allowed_domains = ['http://localhost', 'http://127.0.0.1'],
 
     /**
      * By default, the targetOrigin of window.postMessage is * meaning all
@@ -40,7 +40,7 @@
 
 
     /**
-     * This will listen for a message from support.iframe asking this script to
+     * This will listen for a message from parent asking this script to
      * report the document height.
      */
     win.onmessage = function(e) {
