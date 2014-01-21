@@ -13,6 +13,8 @@
      */
     var allowed_domains = ['http://localhost', 'http://127.0.0.1'],
 
+    domain_count = allowed_domains.length,
+
     /**
      * By default, the targetOrigin of window.postMessage is * meaning all
      * domains. In some cases you will want to restrict this to help prevent
