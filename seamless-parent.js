@@ -14,7 +14,7 @@
 
     extra_space = 60,
 
-    iframes = doc.getElementsByTagName('iframe'),
+    iframes = doc.querySelectorAll('iframe[seamless]'),
     iframes_count = iframes.length,
     domain_count = allowed_domains.length,
     frame, i,
@@ -45,7 +45,8 @@
             for (i = 0; i < iframes_count; i++) {
                 frame = iframes[i];
                 if (getTarget(frame).location.href === e.data.href) {
-                    frame.style.height = (parseInt(e.data.height, 10) || 0 ) + extra_space + 'px';
+                    frame.style.height = (parseInt(e.data.height, 10) || 0 ) +
+                        extra_space + 'px';
                     frame = null;
                     return;
                 }
@@ -56,11 +57,7 @@
 
     for (i = 0; i < iframes_count; i++) {
         frame = iframes[i];
-        if (frame.getAttribute('seamless') !== null) {
-            getTarget(frame).postMessage({
-                request: 'height'
-            }, target_domain);
-        }
+        getTarget(frame).postMessage({ request: 'height' }, target_domain);
     }
     frame = null;
 
