@@ -34,10 +34,10 @@
 
 
     sendHeight = function() {
-        win.parent.postMessage({
+        win.parent.postMessage(JSON.stringify({
             height: doc.body.scrollHeight,
             href: win.location.href
-        }, target_domain);
+        }), target_domain);
     };
 
 
@@ -51,7 +51,9 @@
             return;
         }
 
-        if (e.data.hasOwnProperty('request') && e.data.request === 'height') {
+        var data = JSON.parse(e.data);
+
+        if (data.request && data.request === 'height') {
             sendHeight();
             win.onmessage = null;
         }

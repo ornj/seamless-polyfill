@@ -17,11 +17,12 @@
     iframes = doc.querySelectorAll('iframe[seamless]'),
     iframes_count = iframes.length,
     domain_count = allowed_domains.length,
-    frame, i,
+    frame,
 
 
     checkDomain = function(origin) {
-        for (i = 0; i < domain_count; i++) {
+        var i = 0;
+        for ( ; i < domain_count; i++) {
             if (allowed_domains[i] === origin) {
                 return true;
             }
@@ -41,11 +42,13 @@
             return;
         }
 
-        if (e.data.hasOwnProperty('height') && e.data.hasOwnProperty('href')) {
+        var data = JSON.parse(e.data), i;
+
+        if (data.height && data.href) {
             for (i = 0; i < iframes_count; i++) {
                 frame = iframes[i];
-                if (getTarget(frame).location.href === e.data.href) {
-                    frame.style.height = (parseInt(e.data.height, 10) || 0 ) +
+                if (getTarget(frame).location.href === data.href) {
+                    frame.style.height = (parseInt(data.height, 10) || 0 ) +
                         extra_space + 'px';
                     frame = null;
                     return;
@@ -57,7 +60,9 @@
 
     for (i = 0; i < iframes_count; i++) {
         frame = iframes[i];
-        getTarget(frame).postMessage({ request: 'height' }, target_domain);
+        getTarget(frame).postMessage(JSON.stringify({
+            request: 'height'
+        }), target_domain);
     }
     frame = null;
 
