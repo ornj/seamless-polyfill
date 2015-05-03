@@ -19,6 +19,12 @@
 
     </iframe>
     <iframe src="frame2.html" frameborder="0" seamless></iframe>
-    <script type="text/javascript" src="../seamless-parent.js"></script>
+    <script type="text/javascript" src="../seamless.js"></script>
+    <script type="text/javascript">
+        seamless.parent({
+            'allowed_domains': ['http://localhost:5000'],
+            'target_domain': '*'
+        });
+    </script>
 </body>
 </html>

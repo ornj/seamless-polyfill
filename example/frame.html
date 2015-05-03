@@ -78,6 +78,13 @@
         mauris sodales.
     </p>
 
-    <script type="text/javascript" src="../seamless-iframe.js"></script>
+    <script type="text/javascript" src="../seamless.js"></script>
+    <script type="text/javascript">
+        seamless.frame({
+            'allowed_domains': ['http://localhost:5000'],
+            'target_domain': '*'
+        });
+    </script>
+
 </body>
 </html>
