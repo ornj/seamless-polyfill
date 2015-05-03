@@ -7,6 +7,12 @@
 <body>
     <h1>iFrame Content 2</h1>
     <img src="http://placehold.it/400x1000" alt="">
-    <script type="text/javascript" src="../seamless-iframe.js"></script>
+    <script type="text/javascript" src="../seamless.js"></script>
+    <script type="text/javascript">
+        seamless.frame({
+            'allowed_domains': ['http://localhost:5000'],
+            'target_domain': '*'
+        });
+    </script>
 </body>
 </html>
