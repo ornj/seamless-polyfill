@@ -15,6 +15,18 @@ Seamless is compatible with AMD and CommonJS module loaders. You can also just
 include `seamless.js` manually to create a global `seamless` object.
 
 
+You can install this package using bower or npm.
+
+```
+bower install seamless-polyfill
+```
+
+or
+
+```
+npm install seamless-polyfill
+```
+
 On any page that will be loaded in a frame, call `seamless.frame`.
 
 ```js
