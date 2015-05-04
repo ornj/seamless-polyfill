@@ -1,0 +1,93 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'publish', '-f' ]
+2 info using npm@2.1.6
+3 info using node@v0.10.33
+4 verbose node symlink /usr/local/bin/node
+5 warn using --force I sure hope you know what you are doing.
+6 verbose publish [ '.' ]
+7 silly cache add args [ '.', null ]
+8 verbose cache add spec .
+9 silly cache add parsed spec { raw: '.',
+9 silly cache add   scope: null,
+9 silly cache add   name: null,
+9 silly cache add   rawSpec: '.',
+9 silly cache add   spec: '/Users/shurwitz/Sites/seamless-polyfill',
+9 silly cache add   type: 'directory' }
+10 verbose tar pack [ '/Users/shurwitz/.npm/seamless-polyfill/0.0.1/package.tgz',
+10 verbose tar pack   '/Users/shurwitz/Sites/seamless-polyfill' ]
+11 verbose tarball /Users/shurwitz/.npm/seamless-polyfill/0.0.1/package.tgz
+12 verbose folder /Users/shurwitz/Sites/seamless-polyfill
+13 info prepublish seamless-polyfill@0.0.1
+14 verbose addLocalTarball adding from inside cache /Users/shurwitz/.npm/seamless-polyfill/0.0.1/package.tgz
+15 silly cache afterAdd seamless-polyfill@0.0.1
+16 verbose afterAdd /Users/shurwitz/.npm/seamless-polyfill/0.0.1/package/package.json not in flight; writing
+17 verbose afterAdd /Users/shurwitz/.npm/seamless-polyfill/0.0.1/package/package.json written
+18 silly publish { name: 'seamless-polyfill',
+18 silly publish   version: '0.0.1',
+18 silly publish   description: 'A Javascript polyfill for the HTML5 iframe\'s seamless attribute.',
+18 silly publish   main: 'seamless.js',
+18 silly publish   directories: { example: 'example' },
+18 silly publish   scripts: { test: 'echo "Error: no test specified" && exit 1' },
+18 silly publish   repository:
+18 silly publish    { type: 'git',
+18 silly publish      url: 'https://github.com/ornj/seamless-polyfill.git' },
+18 silly publish   keywords: [ 'polyfill', 'seamless' ],
+18 silly publish   author: { name: 'Stephen Hurwitz', email: 'steve@stevehurwitz.com' },
+18 silly publish   license: 'MIT',
+18 silly publish   bugs: { url: 'https://github.com/ornj/seamless-polyfill/issues' },
+18 silly publish   homepage: 'https://github.com/ornj/seamless-polyfill',
+18 silly publish   readme: '#Seamless Polyfill\n\nAn experimental Javascript polyfill for the HTML5 iframe\'s seamless attribute.\n\nThis is an experimental polyfill for the [iframe seamless attribute](http://www.w3.org/TR/2011/WD-html5-20110525/the-iframe-element.html#attr-iframe-seamless, \'W3C iframe\')\nwhich does not currently have much support amongst stable browsers. In order to\ngive us a similar effect, this polyfill will use the `window.postMessage` method\nto send information about the iframe\'s `scrollHeight` so it can be used by the\nparent to adjust the height of the iframe.\n\n\n## Usage\n\nSeamless is compatible with AMD and CommonJS module loaders. You can also just\ninclude `seamless.js` manually to create a global `seamless` object.\n\n\nYou can install this package using bower or npm.\n\n```\nbower install seamless-polyfill\n```\n\nor\n\n```\nnpm install seamless-polyfill\n```\n\nOn any page that will be loaded in a frame, call `seamless.frame`.\n\n```js\nseamless.frame({\n    \'allowed_domains\': [\'http://localhost:5000\'],\n    \'target_domain\': \'*\'\n});\n```\n\nOn any page that contains frames, call `seamless.parent`.\n\n```js\nseamless.parent({\n    \'allowed_domains\': [\'http://localhost:5000\'],\n    \'target_domain\': \'*\'\n});\n```\n\nAny iframes on the parent page with the `seamless` attribute set will be effected.\n`seamless` is a boolean attribute so it does not require a value. Simply set it as:\n\n```html\n<iframe src="..." frameborder="0" seamless>\n```\n\n## Arguments\n\n* _allowed_domains_: Domain whitelist used for `window.postMessage`. If the domains of the frame and parent are not included, one or both will not respond to messages.\n* _target_domain_: targetOrigin value used for window.postMessage. Defaults to `*`.\n\n## Notes\n\n* As stated above, this is experimental code. I have not used this in a live production environment and it has not gone through any code reviews.\n* I am not providing minified scripts because you really should modify the allowed origins to prevent this method from being accessed by other windows.\n* This implementation hasn\'t been tested on Internet Explorer. I will do this when I have more time available. You should give your iframes a sensible height to start with. Testing is a big "todo".\n',
+18 silly publish   readmeFilename: 'README.md',
+18 silly publish   gitHead: '5568162ccaeaa59fb1100ca7931e4bdda0260cc5',
+18 silly publish   _id: 'seamless-polyfill@0.0.1',
+18 silly publish   _shasum: '9b5d7430b3c51eee2c54a58ed0f15e8c81009801',
+18 silly publish   _from: '.' }
+19 verbose mapToRegistry name seamless-polyfill
+20 verbose mapToRegistry uri https://registry.npmjs.org/seamless-polyfill
+21 verbose publish registryBase https://registry.npmjs.org/
+22 verbose request on initialization, where is /seamless-polyfill
+23 verbose request after pass 1, where is /seamless-polyfill
+24 verbose request url raw /seamless-polyfill
+25 verbose request resolving registry [ 'https://registry.npmjs.org/', './seamless-polyfill' ]
+26 verbose request after pass 2, where is https://registry.npmjs.org/seamless-polyfill
+27 verbose request sending authorization for write operation
+28 info attempt registry request try #1 at 20:58:31
+29 verbose request using bearer token for auth
+30 verbose request id 769c092ce9bee249
+31 http request PUT https://registry.npmjs.org/seamless-polyfill
+32 http 403 https://registry.npmjs.org/seamless-polyfill
+33 verbose headers { 'content-type': 'application/json',
+33 verbose headers   'cache-control': 'max-age=60',
+33 verbose headers   'content-length': '95',
+33 verbose headers   'accept-ranges': 'bytes',
+33 verbose headers   date: 'Mon, 04 May 2015 00:58:32 GMT',
+33 verbose headers   via: '1.1 varnish',
+33 verbose headers   connection: 'keep-alive',
+33 verbose headers   'x-served-by': 'cache-atl6225-ATL',
+33 verbose headers   'x-cache': 'MISS',
+33 verbose headers   'x-cache-hits': '0',
+33 verbose headers   'x-timer': 'S1430701111.869691,VS0,VE766' }
+34 error publish Failed PUT 403
+35 verbose stack Error: "You cannot publish over the previously published version 0.0.1." : seamless-polyfill
+35 verbose stack     at RegClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:260:14)
+35 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:197:65)
+35 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:364:22)
+35 verbose stack     at Request.emit (events.js:98:17)
+35 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1318:14)
+35 verbose stack     at Request.emit (events.js:117:20)
+35 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1266:12)
+35 verbose stack     at IncomingMessage.emit (events.js:117:20)
+35 verbose stack     at _stream_readable.js:943:16
+35 verbose stack     at process._tickCallback (node.js:419:13)
+36 verbose statusCode 403
+37 verbose pkgid seamless-polyfill
+38 verbose cwd /Users/shurwitz/Sites/seamless-polyfill
+39 error Darwin 14.3.0
+40 error argv "node" "/usr/local/bin/npm" "publish" "-f"
+41 error node v0.10.33
+42 error npm  v2.1.6
+43 error code E403
+44 error "You cannot publish over the previously published version 0.0.1." : seamless-polyfill
+45 error If you need help, you may report this error at:
+45 error     <http://github.com/npm/npm/issues>
+46 verbose exit [ 1, true ]
