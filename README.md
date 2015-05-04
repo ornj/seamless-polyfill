@@ -32,7 +32,7 @@ On any page that will be loaded in a frame, call `seamless.frame`.
 ```js
 seamless.frame({
     'allowed_domains': ['http://localhost:5000'],
-    'target_domain': '*'
+    'target_origin': '*'
 });
 ```
 
@@ -41,7 +41,7 @@ On any page that contains frames, call `seamless.parent`.
 ```js
 seamless.parent({
     'allowed_domains': ['http://localhost:5000'],
-    'target_domain': '*'
+    'target_origin': '*'
 });
 ```
 
@@ -55,7 +55,7 @@ Any iframes on the parent page with the `seamless` attribute set will be effecte
 ## Arguments
 
 * _allowed_domains_: Domain whitelist used for `window.postMessage`. If the domains of the frame and parent are not included, one or both will not respond to messages.
-* _target_domain_: targetOrigin value used for window.postMessage. Defaults to `*`.
+* _target_origin_: targetOrigin value used for window.postMessage. Defaults to `*`.
 
 ## Notes
 
