@@ -1,6 +1,6 @@
 {
   "name": "seamless-polyfill",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "description": "A Javascript polyfill for the HTML5 iframe's seamless attribute.",
   "main": "seamless.js",
   "directories": {
