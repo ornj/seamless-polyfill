@@ -54,7 +54,7 @@
     var checkDomain = function(origin) {
         var i;
         for (i = 0; i < allowed_domains_length; i++) {
-            if (allowed_domains[i] === origin) {
+            if (allowed_domains[i] === origin || allowed_domains[i] === '*') {
                 return true;
             }
         }
@@ -78,7 +78,7 @@
      * about a frame document's height.
      */
     var heightListener = function(evt) {
-        if (!checkDomain(e.origin)) {
+        if (!checkDomain(evt.origin)) {
             return;
         }
         var data = JSON.parse(evt.data);
