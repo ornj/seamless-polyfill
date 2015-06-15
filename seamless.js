@@ -78,7 +78,7 @@
      * about a frame document's height.
      */
     var heightListener = function(evt) {
-        if (!checkDomain(e.origin)) {
+        if (!checkDomain(evt.origin)) {
             return;
         }
         var data = JSON.parse(evt.data);
