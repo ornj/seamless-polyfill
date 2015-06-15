@@ -56,9 +56,3 @@ Any iframes on the parent page with the `seamless` attribute set will be effecte
 
 * _allowed_domains_: Domain whitelist used for `window.postMessage`. If the domains of the frame and parent are not included, one or both will not respond to messages.
 * _target_origin_: targetOrigin value used for window.postMessage. Defaults to `*`.
-
-## Notes
-
-* As stated above, this is experimental code. I have not used this in a live production environment and it has not gone through any code reviews.
-* I am not providing minified scripts because you really should modify the allowed origins to prevent this method from being accessed by other windows.
-* This implementation hasn't been tested on Internet Explorer. I will do this when I have more time available. You should give your iframes a sensible height to start with. Testing is a big "todo".
