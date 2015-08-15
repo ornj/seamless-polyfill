@@ -2,7 +2,7 @@
 
 A Javascript polyfill for the HTML5 iframe's seamless attribute.
 
-This is an experimental polyfill for the [iframe seamless attribute](http://www.w3.org/TR/2011/WD-html5-20110525/the-iframe-element.html#attr-iframe-seamless, 'W3C iframe')
+This is a polyfill for the [iframe seamless attribute](http://www.w3.org/TR/2011/WD-html5-20110525/the-iframe-element.html#attr-iframe-seamless, 'W3C iframe')
 which does not currently have much support amongst stable browsers. In order to
 give us a similar effect, this polyfill will use the `window.postMessage` method
 to send information about the iframe's `scrollHeight` so it can be used by the
